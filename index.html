@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="WeatherServiceApp">
+    <head>
+        <title>Weather Service</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <!-- skycons -->
+        <script src="skycons.js"></script>
+        
+    </head>
+    <body>
+        <div ng-controller="WeatherServiceController as wsc">
+            <div class="page-header">
+                <h1>AngularJS - {{wsc.app_name}}</h1>
+            </div>
+            <!--
+            <div>
+                <select ng-model="wsc.selected_city" 
+                        ng-options="city.name for city in wsc.cities" 
+                        ng-change="wsc.getCurrentConditions()"></select>
+            </div>-->
+            <div class="panel panel-default">
+                <div class="panel-heading" >Selected City: </div>
+                <div class="panel-body">
+                    <!-- http://www.infragistics.com/community/blogs/dhananjay_kumar/archive/2015/06/29/how-to-work-with-the-bootstrap-dropdown-in-angularjs.aspx -->
+                    <div class="dropdown">
+                        <button class="bt btn-default dropdown-toggle" type="button" id="dropdowncities"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            {{wsc.selected_city.name}}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdowncities">
+                            <li ng-model="wsc.selected_city" 
+                                ng-repeat="city in wsc.cities" 
+                                ng-change="wsc.getCurrentConditions()">
+                                <a ng-click="wsc.dropdowncitiesSelected(city)">{{city.name}}</a>
+                            </li>
+                        </ul>
+                    </div>                    
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <!-- custom Angular directive -->
+                    <!--<my-conditions-wu></my-conditions-wu>-->
+                    <my-conditions-ds></my-conditions-ds>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="angular.min.js"></script>
+        <script src="angular-skycons.js"></script>
+        <script src="app.js"></script>
+    </body>
+    
+</html>
