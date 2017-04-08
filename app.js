@@ -25,54 +25,47 @@ myModule.controller('WeatherServiceController',
 
         },
         {
-            name: "Anchorage",
-            url_name: "Anchorage",
-            state: "AK",
+            name: "Canyon",
+            url_name: "Canyon",
+            state: "TX",
             lat: 0,
             lon: 0
         },
         {
-            name: "Denver",
-            url_name: "Denver",
-            state: "CO",
+            name: "Dallas",
+            url_name: "Dallas",
+            state: "TX",
             lat: 0,
             lon: 0
         },        
         {
-            name: "Honolulu",
-            url_name: "Honolulu",
-            state: "HI",
+            name: "Houston",
+            url_name: "Houston",
+            state: "TX",
             lat: 0,
             lon: 0
         },
         {
-            name: "Los Angeles",
-            url_name: "Los_Angeles",
-            state: "CA",
+            name: "San Antonio",
+            url_name: "San Antonio",
+            state: "TX",
             lat: 0,
             lon: 0
         },
         {
-            name: "Miami",
-            url_name: "Miami",
-            state: "FL",
+            name: "El Paso",
+            url_name: "El Paso",
+            state: "TX",
             lat: 0,
             lon: 0
         },        
         {
-            name: "New York",
-            url_name: "New_York",
-            state: "NY",
+            name: "Austin",
+            url_name: "Austin",
+            state: "TX",
             lat: 0,
             lon: 0
-        },
-        {
-            name: "Seattle",
-            url_name: "Seattle",
-            state: "WA",
-            lat: 0,
-            lon: 0
-        }        
+        }       
     ];
     
     ///// GET WEATHER UNDERGROUND //////////////////////////////////////////////
@@ -130,7 +123,7 @@ myModule.controller('WeatherServiceController',
     //uses the weatherService to obtain the current conditions
     wsc.getCurrentConditions = function(){
         
-        var google_static_maps_key = "AIzaSyAVIugWFEfJlG9Y5HS-kkkoQISjDNWWDtM";        
+        var google_static_maps_key = "AIzaSyBiUpBjcnq-OEZs8MLzvdijf8BvXBLeMP8";        
         
         wsc.google_static_maps_url = "https://maps.googleapis.com/maps/api/staticmap?center=" +
                                      wsc.selected_city.lat + "," +
@@ -231,7 +224,7 @@ myModule.factory('GoogleGeolocationService',['$sce', '$http', function($sce, $ht
     var geolocationService = {};
     
     //Google Maps Geocoding API key    
-    var key = "AIzaSyC4tT_4VUXDbiSLz_AJVuTLDOzewjj7O9A";
+    var key = "AIzaSyCPZfMvH3_-dE1imk52RGEVHjnWbNscaf0";
     
     geolocationService.geoLocate = function(location){
         
@@ -285,7 +278,7 @@ myModule.factory('DSWeatherService',['$sce','$http', function($sce, $http){
     var dsweatherService = {};
     
     //DarkSky API key
-    var key = "7d6b840a8882bb9b82bdb940fe731e14";
+    var key = "5703850e53c12bb91f4e5d4c9eae6097";
 
     //get current rest conditions
     dsweatherService.getCurrentConditions = function(city){
