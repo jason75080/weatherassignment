@@ -1,0 +1,48 @@
+<p><img src="{{wc.google_static_maps_url}}" /></p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table table-condensed">
+            <tr>
+                <td>
+                    <span class="label label-info">Report Time:</span>
+                </td>
+                <td>
+                    <span class="badge">{{wc.ds_observation_time}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-info">Temperature:</span>
+                </td>
+                <td>
+                    <span class="badge">{{wc.ds_temperature}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-info">Dewpoint:</span>
+                </td>
+                <td>
+                    <span class="badge">{{wc.ds_dewpoint}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="label label-info">Wind:</span>
+                </td>
+                <td>
+                    <span class="badge">{{wc.ds_windBearing}} at {{wsc.ds_windSpeed}}</span>
+                </td>
+            </tr>            
+            <tr>
+                <td>
+                    <span class="label label-info">Current Conditions:</span>
+                </td>
+                <td>
+                    <skycon icon="wc.ds_icon" size="128"></skycon>
+                </td>
+            </tr>
+            
+        </table>
+    </div>                                
+</div>
